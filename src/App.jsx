@@ -6,9 +6,9 @@ function App() {
 
   return (
     <>
-      <DefaultTemplate>
+      {/* <DefaultTemplate> */}
         <Routes />
-      </DefaultTemplate>
+      {/* </DefaultTemplate> */}
     </>
   )
 }

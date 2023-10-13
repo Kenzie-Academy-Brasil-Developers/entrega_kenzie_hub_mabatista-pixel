@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
+import { DefaultTemplate } from "../../components";
+import { LoginForm } from "../../components/Forms/LoginForm";
+import logo from "../../assets/logo.svg"
 
 export const HomePage = () => {
     return (
-        <main>
-            <h1>Página inicial</h1>
-            <button>
-                <Link to="/register">Cadastre-se</Link>
-            </button>
-        </main>
+        <>
+            <header>
+                <div>
+                    <img src={logo} alt="Logo Kenzie Hub" />
+                </div>
+            </header>
+            <main>
+                <LoginForm />
+            </main>
+        </>
     )
 }
