@@ -39,3 +39,10 @@ Por ser uma SPA precisamos fazer a seguinte configuração do vercel, criando um
     ]
 }
 
+# Componente "Link" vs Tag "a"
+
+### Quando usar o componente Link?
+Toda vez que o redirecionamento for interno na aplicação. Rotas Criadas com o React Router DOM
+
+### Quando usar a tag "a" ?
+Toda vez que o redirecionamento for externo à aplicação. Ex: Página do Linkedin
