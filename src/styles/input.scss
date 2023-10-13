@@ -1,0 +1,29 @@
+.input-default {
+    width: 263px;
+    height: 38px;
+    border-radius: 3.2px;
+    border: 0.97px solid var(--color-grey-2);
+    padding: 0px 13px 0px 13px;
+    background-color: var(--color-grey-2);
+    color: var(--color-grey-1);
+
+    &::placeholder {
+        color: var(--color-grey-1);
+        font-size: 13px;
+        line-height: 21px;
+        font-weight: 400;
+    }
+
+    &:focus {
+        background-color: var(--color-grey-2);
+        color: var(--color-grey-0);
+
+    }
+}
+
+.label {
+    font-weight: 400;
+    font-size: 9.74px;
+    color: var(--color-grey-0);
+}
+

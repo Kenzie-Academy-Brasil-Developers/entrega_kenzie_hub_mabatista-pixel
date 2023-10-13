@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./styles/index.scss";
 import Routes from "./routes";
 import { DefaultTemplate } from "./components";
 
