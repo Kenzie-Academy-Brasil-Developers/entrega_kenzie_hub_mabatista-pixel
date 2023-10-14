@@ -1,6 +1,6 @@
 .btn-primary {
-    width: 260px;
-    height: 38.5px;
+    width: 290px;
+    height: 38px;
     border-radius: 4px;
     border: 1.2px var(--color-primary);
     padding: 0px 22px 0px 22px;
@@ -17,8 +17,8 @@
 }
 
 .btn-primary-negative {
-    width: 260px;
-    height: 38.5px;
+    width: 290px;
+    height: 38px;
     border-radius: 4px;
     border: 1.2px var(--color-primary-Negative);
     padding: 0px 22px 0px 22px;
@@ -32,8 +32,8 @@
 }
 
 .btn-disabled {
-    width: 260px;
-    height: 38.5px;
+    width: 290px;
+    height: 38px;
     border-radius: 4px;
     border: 1.2px var(--color-grey-1);
     padding: 0px 22px 0px 22px;
@@ -43,7 +43,7 @@
     font-size: 12.83px;
     line-height: 21px;
     font-weight: 500;
-
+    text-decoration: none;
     &:hover {
         background-color: var(--color-grey-2);
     }

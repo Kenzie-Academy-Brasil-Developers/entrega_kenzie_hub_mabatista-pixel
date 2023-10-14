@@ -1,0 +1,16 @@
+.headerBox {
+    background-color: var(--color-grey-4);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-width: 320px;
+    max-width: 370px;
+    height: 110px;
+    padding: 81px 110px 20px 110px;
+
+    img {
+        width: 101px;
+        height: 14px;
+    }
+
+}

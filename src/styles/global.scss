@@ -2,7 +2,7 @@
     --color-primary: #FF577F;
     --color-primary-Focus: #FF427F;
     --color-primary-Negative: #59323F;
-    --color-white: #FFFFFF
+    --color-white: #FFFFFF;
     --color-grey-0: #F8F9FA;
     --color-grey-1: #868E96;
     --color-grey-2: #343B41;
@@ -10,4 +10,9 @@
     --color-grey-4: #121214;
     --color-success: #3FE864;
     --color-negative: #E83F5B;
+}
+
+#root {
+    background-color: var(--color-grey-4);
+    padding: 50px 12px;
 }
