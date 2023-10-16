@@ -29,6 +29,11 @@
     line-height: 21px;
     font-weight: 500;
     font-family: 'Inter', sans-serif;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.7;
+    }
 
 }
 

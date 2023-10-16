@@ -1,14 +1,37 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 
-export const Select = () => {
+// export const Select = () => {
 
-    const [selectedModule, setSelectedModule] = useState("module1")
+//     const [selectedModule, setSelectedModule] = useState("module1")
+
+//     return (
+//         <div>
+//             <label>
+//                 Selecionar módulo
+//                 <select name="selectedModule"
+//                     value={selectedModule} onChange={(e) => setSelectedModule(e.target.value)}>
+//                     <option value="module1">Primeiro Módulo </option>
+//                     <option value="module2">Segundo Módulo </option>
+//                     <option value="module3">Terceiro Módulo </option>
+//                     <option value="module4">Quarto Módulo </option>
+//                     <option value="module5">Quinto Módulo </option>
+//                     <option value="module6">Sexto Módulo </option>
+//                 </select>
+//             </label>
+//         </div>
+//     )
+// }
+
+export const Select = forwardRef(({ label, ...rest }, ref) => {
+
+    const [ selectedModule, setSelectedModule] = useState("module1")
 
     return (
+
         <div>
             <label>
-                Selecionar módulo
-                <select name="selectedModule"
+                {label}
+                <select ref={ref} {...rest}
                     value={selectedModule} onChange={(e) => setSelectedModule(e.target.value)}>
                     <option value="module1">Primeiro Módulo </option>
                     <option value="module2">Segundo Módulo </option>
@@ -19,5 +42,8 @@ export const Select = () => {
                 </select>
             </label>
         </div>
+
     )
-}
+
+})
+
