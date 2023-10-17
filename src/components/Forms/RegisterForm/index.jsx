@@ -42,7 +42,7 @@ export const RegisterForm = () => {
                     <Input label="Contato" type="text" {...register("contact")} error={errors.contact} placeholder="Opção de contato" />
                 </div>
                 <div className={styles.selectDiv}>
-                    <Select label="Selecionar módulo" {...register("selectedModule")} error={errors.selectedModule} />
+                    <Select label="Selecionar módulo" {...register("selectedModule")} error={errors.selectedModule} id="selectedModule" />
                 </div>
                 <button className="btn-primary-negative" type="submit">Cadastrar</button>
             </div>

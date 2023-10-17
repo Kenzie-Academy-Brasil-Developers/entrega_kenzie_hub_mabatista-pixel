@@ -1,5 +1,7 @@
 .formSection {
     padding-bottom: 50px;
+    // padding-left: 100px;
+
 }
 
 .inputContainer {
@@ -8,7 +10,9 @@
     flex-direction: column;
     align-items: center;
     min-width: 296px;
+    max-width: 369px;
     min-height: 402px;
+    max-height: 557px;
     border-radius: 3px;
     padding: 33px 17px;
     background-color: var(--color-grey-3);

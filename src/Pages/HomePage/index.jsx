@@ -7,14 +7,16 @@ import styles from "./styles.module.scss"
 export const HomePage = () => {
     return (
         <>
-            <header className={styles.headerBox}>
-                <div>
-                    <img src={logo} alt="Logo Kenzie Hub" />
-                </div>
-            </header>
-            <main className={styles.main}>
-                <LoginForm />
-            </main>
+            <div className={styles.pageContainer}>
+                <header className={styles.headerBox}>
+                    <div>
+                        <img src={logo} alt="Logo Kenzie Hub" />
+                    </div>
+                </header>
+                <main className={styles.main}>
+                    <LoginForm />
+                </main>
+            </div>
         </>
     )
 }

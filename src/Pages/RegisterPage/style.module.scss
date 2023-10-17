@@ -1,18 +1,31 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .registerHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 95px;
-    min-width: 296px;
+    min-width: 315px;
+    max-width: 370px;
 
     img {
-        width: 101px;
-        height: 16px;
+        min-width: 101px;
+        max-width: 122px;
+        min-height: 16px;
+        max-height: 21px;
     }
 
     button {
-        width: 80px;
-        height: 31px;
+        min-width: 67px;
+        max-width: 80px;
+        min-height: 31px;
+        max-height: 40px;
         border-radius: 4px;
         padding: 0px 16px 0px 16px;
         background-color: var(--color-grey-3);
@@ -21,7 +34,7 @@
         a {
             text-decoration: none;
             color: var(--color-grey-0);
-            
+
         }
     }
 }
