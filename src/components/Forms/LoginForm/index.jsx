@@ -1,18 +1,45 @@
 import { Input } from "../../Input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { loginFormSchema } from "./loginForm.schema";
+import { api } from "../../../services/api";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const LoginForm = () => {
 
-    const { register, handleSubmit, formState: {errors} } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(loginFormSchema),
     });
 
+    const [loading, setLoading] = useState(false);
+
+    const navigate = useNavigate();
+
+    const userLogin = async (formData) => {
+        try {
+            setLoading(true);
+            const { data } = await api.post("/sessions", formData)
+            localStorage.setItem("@TOKEN", data.token); 
+            toast("Login realizado com sucesso")
+            navigate("/user")
+        } catch (error) {
+            console.log(error);
+            if (error.response?.data === "Incorrect password") {
+                toast("Credenciais inválidas")
+            } else {
+                toast("Ops! Algo deu errado.")
+            }
+        } finally {
+            setLoading(false);
+        }
+    }
+
     const submit = (formData) => {
-        console.log(formData)
+        userLogin(formData)
     }
 
     return (
@@ -26,10 +53,11 @@ export const LoginForm = () => {
                     <div>
                         <Input className={styles.input} label="Senha" type="password" id="password" placeholder="Digite aqui sua senha" error={errors.password} {...register("password")} />
                     </div>
-                    <button className="btn-primary" type="submit">Entrar</button>
+                    <button className="btn-primary" type="submit" disabled={loading}>Entrar</button>
                     <div>
                         <p>Ainda não possui uma conta?</p>
-                        <button className="btn-disabled"> <Link to="/register">Cadastre-se</Link></button>
+                        <button className="btn-disabled"> <Link to="/register" >Cadastre-se</Link></button>
+                        <ToastContainer autoClose={2000} />
                     </div>
                 </div>
             </form>
