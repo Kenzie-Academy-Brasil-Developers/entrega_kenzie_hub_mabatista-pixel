@@ -9,7 +9,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-export const LoginForm = () => {
+export const LoginForm = ({ setUser }) => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(loginFormSchema),
@@ -23,6 +23,7 @@ export const LoginForm = () => {
         try {
             setLoading(true);
             const { data } = await api.post("/sessions", formData)
+            setUser(data.user)
             localStorage.setItem("@TOKEN", data.token); 
             toast("Login realizado com sucesso")
             navigate("/user")

@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
-import { DefaultTemplate } from "../../components";
 import { LoginForm } from "../../components/Forms/LoginForm";
 import logo from "../../assets/logo.svg";
-import styles from "./styles.module.scss"
+import styles from "./styles.module.scss";
 
-export const HomePage = () => {
+export const HomePage = ({ setUser }) => {
     return (
         <>
             <div className={styles.pageContainer}>
@@ -14,7 +12,7 @@ export const HomePage = () => {
                     </div>
                 </header>
                 <main className={styles.main}>
-                    <LoginForm />
+                    <LoginForm setUser={setUser} />
                 </main>
             </div>
         </>

@@ -1,25 +1,24 @@
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import styles from "./style.module.scss";
-import { Line } from "../../components/Line";
 
-export const UserPage = () => {
+export const UserPage = ({ user, userLogout }) => {
     return (
         <>
             <div className={styles.pageContainer}>
                 <header className={styles.userHeader}>
                     <div className={styles.headerDivButton}>
                         <img src={logo} alt="Logo Kenzie Hub" />
-                        <button>
-                            <Link to="/">Sair
+                        <button onClick={() => userLogout()} >
+                            <Link >Sair
                             </Link>
                         </button>
                     </div>
                     <hr className={styles.customLine} />
                     
                     <div className={styles.headerDivInfo}>
-                        <h1 className="title1">Olá, Matheus Batista</h1>
-                        <span>Terceiro módulo (React)</span>
+                        <h1 className="title1">Olá, {user?.name}</h1>
+                        <span>{user?.course_module}</span>
                     </div>
                 </header>
 

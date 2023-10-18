@@ -1,4 +1,4 @@
-import { DefaultTemplate, RegisterForm } from "../../components"
+import { RegisterForm } from "../../components";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import styles from "./style.module.scss";

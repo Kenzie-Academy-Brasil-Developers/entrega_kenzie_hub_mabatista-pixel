@@ -9,11 +9,8 @@ import { api } from "../../../services/api";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
-// import { Toast } from "react-toastify/dist/components";
 
 export const RegisterForm = () => {
-
-
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(registerFormSchema),
@@ -36,16 +33,14 @@ export const RegisterForm = () => {
                 toast("Ops! Algo deu errado.")
             }
         }
-            finally {
-                setLoading(false);
-            }
+        finally {
+            setLoading(false);
+        }
     }
-
 
     const submit = (formData) => {
         userRegister(formData);
     }
-
 
     return (
         <>
