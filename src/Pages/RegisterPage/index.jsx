@@ -12,9 +12,7 @@ export const RegisterPage = () => {
                         <img src={logo} alt="Logo Kenzie Hub" />
                     </div>
                     <div>
-                        <button>
-                            <Link to="/">Voltar</Link>
-                        </button>
+                        <Link to="/">Voltar</Link>
                     </div>
                 </header>
                 <main>

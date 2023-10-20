@@ -9,18 +9,15 @@ export const UserPage = ({ user, userLogout }) => {
                 <header className={styles.userHeader}>
                     <div className={styles.headerDivButton}>
                         <img src={logo} alt="Logo Kenzie Hub" />
-                        <button onClick={() => userLogout()} >
-                            <Link >Sair
-                            </Link>
-                        </button>
+                        <Link onClick={() => userLogout()} > Sair</Link>
                     </div>
                     <hr className={styles.customLine} />
-                    
+
                     <div className={styles.headerDivInfo}>
                         <h1 className="title1">Olá, {user?.name}</h1>
                         <span>{user?.course_module}</span>
                     </div>
-                </header>
+                </header >
 
                 <hr className={styles.customLine} />
 
@@ -35,7 +32,7 @@ export const UserPage = ({ user, userLogout }) => {
 
                     </div>
                 </main>
-            </div>
+            </div >
         </>
     )
 }

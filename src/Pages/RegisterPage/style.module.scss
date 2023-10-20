@@ -22,20 +22,19 @@
         max-height: 21px;
     }
 
-    button {
+    a {
         min-width: 67px;
         max-width: 80px;
         min-height: 31px;
         max-height: 40px;
         border-radius: 4px;
-        padding: 0px 16px 0px 16px;
+        padding: 10px 20px 10px 20px;
+        font-size: 9.59px;
+        line-height: 22px;
+        text-align: center;
         background-color: var(--color-grey-3);
         border: none;
-
-        a {
-            text-decoration: none;
-            color: var(--color-grey-0);
-
-        }
+        text-decoration: none;
+        color: var(--color-grey-0);
     }
 }

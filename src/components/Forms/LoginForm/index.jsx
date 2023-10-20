@@ -57,7 +57,7 @@ export const LoginForm = ({ setUser }) => {
                     <button className="btn-primary" type="submit" disabled={loading}>Entrar</button>
                     <div>
                         <p>Ainda não possui uma conta?</p>
-                        <button className="btn-disabled"> <Link to="/register" >Cadastre-se</Link></button>
+                        <Link className="btn-disabled" to="/register" >Cadastre-se</Link>
                         <ToastContainer autoClose={2000} />
                     </div>
                 </div>

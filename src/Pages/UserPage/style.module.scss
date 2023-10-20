@@ -30,13 +30,13 @@
         font-size: 12px;
         line-height: 18px;
         color: var(--color-grey-1);
-        padding-right: 1.875rem;
     }
 
     .headerDivButton {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
     }
 
@@ -61,18 +61,15 @@
         height: 14.63px;
     }
 
-    button {
+    a {
         width: 80px;
         height: 31px;
         border-radius: 4px;
-        padding: 0px 16px 0px 16px;
+        padding: 6px 0px 0px 25px;
         background-color: var(--color-grey-3);
         border: none;
-
-        a {
-            color: #F8F9FA;
-            text-decoration: none;
-        }
+        color: #F8F9FA;
+        text-decoration: none;
     }
 }
 
