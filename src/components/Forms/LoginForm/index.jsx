@@ -5,42 +5,28 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { loginFormSchema } from "./loginForm.schema";
 import { api } from "../../../services/api";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { HubContext } from "../../providers/HubContext";
 
-export const LoginForm = ({ setUser }) => {
+export const LoginForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(loginFormSchema),
     });
 
+    const { setUser } = useContext(HubContext)
+
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
-    const userLogin = async (formData) => {
-        try {
-            setLoading(true);
-            const { data } = await api.post("/sessions", formData)
-            setUser(data.user)
-            localStorage.setItem("@TOKEN", data.token); 
-            toast("Login realizado com sucesso")
-            navigate("/user")
-        } catch (error) {
-            console.log(error);
-            if (error.response?.data === "Incorrect password") {
-                toast("Credenciais inválidas")
-            } else {
-                toast("Ops! Algo deu errado.")
-            }
-        } finally {
-            setLoading(false);
-        }
-    }
+    const { userLogin } = useContext(HubContext);
+
 
     const submit = (formData) => {
-        userLogin(formData)
+        userLogin(formData, setLoading)
     }
 
     return (

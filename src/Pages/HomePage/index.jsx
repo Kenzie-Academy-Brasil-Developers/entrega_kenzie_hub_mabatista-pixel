@@ -1,8 +1,13 @@
 import { LoginForm } from "../../components/Forms/LoginForm";
 import logo from "../../assets/logo.svg";
 import styles from "./styles.module.scss";
+import { HubContext } from "../../components/providers/HubContext";
+import { useContext } from "react";
 
-export const HomePage = ({ setUser }) => {
+export const HomePage = () => {
+
+    const { user, setUser } = useContext(HubContext)
+
     return (
         <>
             <div className={styles.pageContainer}>

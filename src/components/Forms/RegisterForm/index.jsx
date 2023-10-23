@@ -8,7 +8,8 @@ import { registerFormSchema } from "./registerForm.schema";
 import { api } from "../../../services/api";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { HubContext } from "../../providers/HubContext";
 
 export const RegisterForm = () => {
 
@@ -18,28 +19,30 @@ export const RegisterForm = () => {
 
     const [loading, setLoading] = useState(false);
 
+    const { userRegister } = useContext(HubContext)
+
     const navigate = useNavigate();
 
-    const userRegister = async (formData) => {
-        try {
-            setLoading(true);
-            await api.post("/users", formData);
-            toast("Cadastro realizado com sucesso.")
-            navigate("/")
-        } catch (error) {
-            if (error.response?.data === "Email already exists") {
-                toast("Usuário já cadastrado.")
-            } else {
-                toast("Ops! Algo deu errado.")
-            }
-        }
-        finally {
-            setLoading(false);
-        }
-    }
+    // const userRegister = async (formData) => {
+    //     try {
+    //         setLoading(true);
+    //         await api.post("/users", formData);
+    //         toast("Cadastro realizado com sucesso.")
+    //         navigate("/")
+    //     } catch (error) {
+    //         if (error.response?.data === "Email already exists") {
+    //             toast("Usuário já cadastrado.")
+    //         } else {
+    //             toast("Ops! Algo deu errado.")
+    //         }
+    //     }
+    //     finally {
+    //         setLoading(false);
+    //     }
+    // }
 
     const submit = (formData) => {
-        userRegister(formData);
+        userRegister(formData, setLoading);
     }
 
     return (
