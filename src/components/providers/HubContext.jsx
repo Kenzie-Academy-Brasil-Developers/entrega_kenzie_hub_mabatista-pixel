@@ -14,6 +14,8 @@ export const HubProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
 
+    const pathname = window.location.pathname;
+
     useEffect(() => {
         const token = localStorage.getItem("@TOKEN")
         const userId = localStorage.getItem("@USERID")
@@ -30,7 +32,7 @@ export const HubProvider = ({ children }) => {
                         }
                     });
                     setUser(data)
-                    navigate("/user")
+                    navigate(pathname)
 
                 } catch (error) {
                     console.log(error)
