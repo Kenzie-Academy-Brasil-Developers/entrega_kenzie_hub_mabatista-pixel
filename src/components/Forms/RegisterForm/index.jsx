@@ -23,24 +23,6 @@ export const RegisterForm = () => {
 
     const navigate = useNavigate();
 
-    // const userRegister = async (formData) => {
-    //     try {
-    //         setLoading(true);
-    //         await api.post("/users", formData);
-    //         toast("Cadastro realizado com sucesso.")
-    //         navigate("/")
-    //     } catch (error) {
-    //         if (error.response?.data === "Email already exists") {
-    //             toast("Usuário já cadastrado.")
-    //         } else {
-    //             toast("Ops! Algo deu errado.")
-    //         }
-    //     }
-    //     finally {
-    //         setLoading(false);
-    //     }
-    // }
-
     const submit = (formData) => {
         userRegister(formData, setLoading);
     }
