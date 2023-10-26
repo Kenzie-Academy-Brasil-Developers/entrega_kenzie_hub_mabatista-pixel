@@ -1,0 +1,21 @@
+.container {
+
+}
+
+.listInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+    .openModalBtn {
+        background-color: transparent;
+        border: none;
+
+        img {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+    }
+}

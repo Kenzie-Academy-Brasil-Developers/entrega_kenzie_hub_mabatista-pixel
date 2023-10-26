@@ -1,0 +1,140 @@
+.modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .modalContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 296px;
+        height: 274px;
+        border-radius: 3.2px;
+        background-color: var(--color-grey-3);
+        box-shadow: 0px 3.20867px 32.08672px -8.02168px rgba(0, 0, 0, 0.25);
+
+        .formContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+
+            .inputsContainer {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    }
+
+
+    .modalHeader {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--color-grey-2);
+        border: none;
+        border-radius: 3.2px 3.2px 0px 0px;
+
+        button {
+            background-color: transparent;
+            color: var(--color-grey-1);
+            border: none;
+            padding-right: 1rem;
+        }
+
+        h1 {
+            color: var(--color-grey-0);
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 19px;
+            padding: 10px 16px;
+        }
+    }
+}
+
+.inputDiv {
+
+    label {
+        color: var(--color-grey-0);
+        font-size: 9.772px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 0px;
+        font-family: Inter;
+    }
+
+    input,
+    select {
+        width: 259px;
+        height: 38.5px;
+        border-radius: 3.209px;
+        border: none;
+        background-color: var(--color-grey-2);
+        color: var(--color-grey-1);
+        font-family: Inter;
+        font-size: 12.985px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 21.101px;
+
+        &:focus {
+            border: 0.977px solid var(--color-grey-0);
+            color: var(--color-grey-0);
+        }
+
+    }
+
+    input::placeholder {
+        color: var(--grey-0, #F8F9FA);
+        font-family: Inter;
+        font-size: 13.029px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 21.173px;
+    }
+
+    select {
+        width: 265px;
+        height: 42px;
+    }
+}
+
+.modalBtn {
+    width: 259px;
+    height: 42px;
+    border-radius: 3.2px;
+    align-self: center;
+    border: 0.977px solid var(--color-primary);
+    padding: 0px 22px 0px 22px;
+    text-align: center;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 12.835px;
+    font-style: normal;
+    line-height: 21.173px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+
+    &:hover {
+        background-color: var(--color-primary-Focus);
+    }
+}

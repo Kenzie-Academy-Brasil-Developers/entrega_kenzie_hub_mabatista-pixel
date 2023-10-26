@@ -2,7 +2,7 @@ import { forwardRef, useState } from "react";
 
 export const Select = forwardRef(({ id, label, ...rest }, ref) => {
 
-    const [selectedModule, setSelectedModule] = useState("module1")
+    const [selectedModule, setSelectedModule] = useState("Primeiro Módulo")
 
     return (
 

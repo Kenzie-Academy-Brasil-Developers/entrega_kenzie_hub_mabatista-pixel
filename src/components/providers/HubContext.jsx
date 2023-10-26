@@ -11,7 +11,7 @@ export const HubContext = createContext({});
 export const HubProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(false);
-
+    const [techList, setTechList] = useState([]);
     const [user, setUser] = useState(null);
 
     const pathname = window.location.pathname;
@@ -74,6 +74,7 @@ export const HubProvider = ({ children }) => {
             localStorage.setItem("@TOKEN", data.token);
             localStorage.setItem("@USERID", data.user.id)
             setUser(data.user)
+            setTechList(data.techs)
             toast("Login realizado com sucesso")
             navigate("/user")
         } catch (error) {
@@ -98,7 +99,7 @@ export const HubProvider = ({ children }) => {
 
 
     return (
-        <HubContext.Provider value={{ loading,  user, setUser, userRegister, userLogin, userLogout }}>
+        <HubContext.Provider value={{ loading, user, setUser, userRegister, userLogin, userLogout, techList }}>
             {children}
         </HubContext.Provider>
     )

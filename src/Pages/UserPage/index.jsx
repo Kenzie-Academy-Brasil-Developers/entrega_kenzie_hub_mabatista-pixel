@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "./style.module.scss";
 import { HubContext } from "../../components/providers/HubContext";
 import { useContext } from "react";
+import { TechList } from "../../components/TechList";
 
 export const UserPage = () => {
 
-    const { user, userLogout  } = useContext(HubContext);
+    const { user, userLogout } = useContext(HubContext);
 
     return (
         <>
@@ -28,13 +29,9 @@ export const UserPage = () => {
 
                 <main className={styles.userMain}>
                     <div className={styles.boxContainer}>
-
-
                         <div className={styles.notificationDiv}>
-                            <h1 className="title1">Que pena! Estamos em desenvolvimento :( </h1>
-                            <p className="paragraph">Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>
+                            <TechList />
                         </div>
-
                     </div>
                 </main>
             </div >
