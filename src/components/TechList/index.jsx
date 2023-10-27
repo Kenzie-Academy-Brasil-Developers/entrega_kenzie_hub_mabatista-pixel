@@ -16,6 +16,8 @@ export const TechList = () => {
     const { techList } = useContext(HubContext)
     // console.log(techList)
     console.log(techList)
+
+
     return (
         <>
             <div className={styles.container}>

@@ -1,18 +1,22 @@
 import { useForm } from "react-hook-form";
-import styles from "./styles.module.scss";
-import { useState } from "react";
+import styles from "./style.module.scss";
+import { useContext, useState } from "react";
+import { TechContext } from "../providers/TechContext";
 
 export const CreateTechModal = ({ isOpen, onClose }) => {
 
     if (!isOpen) return null;
 
     const { register, handleSubmit } = useForm();
+    const { createPost } = useContext(TechContext);
+    const [selectedValue, setSelectedValue] = useState("Iniciante");
 
     const submit = (formData) => {
-        console.log(formData)
+        createPost(formData)
     }
 
-    const [selectedValue, setSelectedValue] = useState("Iniciante")
+
+
 
     return (
         <div className={styles.modalContainer}>

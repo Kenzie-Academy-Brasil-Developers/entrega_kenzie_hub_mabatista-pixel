@@ -32,6 +32,7 @@ export const HubProvider = ({ children }) => {
                         }
                     });
                     setUser(data)
+                    setTechList(data.techs)
                     navigate(pathname)
 
                 } catch (error) {
@@ -74,7 +75,6 @@ export const HubProvider = ({ children }) => {
             localStorage.setItem("@TOKEN", data.token);
             localStorage.setItem("@USERID", data.user.id)
             setUser(data.user)
-            setTechList(data.techs)
             toast("Login realizado com sucesso")
             navigate("/user")
         } catch (error) {
@@ -99,7 +99,7 @@ export const HubProvider = ({ children }) => {
 
 
     return (
-        <HubContext.Provider value={{ loading, user, setUser, userRegister, userLogin, userLogout, techList }}>
+        <HubContext.Provider value={{ loading, user, setUser, userRegister, userLogin, userLogout, techList, setTechList }}>
             {children}
         </HubContext.Provider>
     )

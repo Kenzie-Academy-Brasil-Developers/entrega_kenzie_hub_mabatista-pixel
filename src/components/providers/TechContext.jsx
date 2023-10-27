@@ -10,30 +10,8 @@ export const TechProvider = ({ children }) => {
 
     const { user } = useContext(HubContext)
     const { techList, setTechList } = useContext(HubContext)
+    const [editingPost, setEditingPost] = useState(null);
 
-    // console.log(techList)
-    // const [ techList, setTechList ] = useState([]);
-
-
-    // useEffect(() => {
-    //     const getPosts = async () => {
-    //         try {
-    //             const { data } = await api.get("/profile")
-    //             setTechList(data.techs)
-    //         } catch (error) {
-    //             console.log(error)
-    //         }
-    //     }
-    //     getPosts()
-    // }, [])
-
-    console.log(user)
-    console.log(techList)
-
-    // {
-    //     "title": "React",
-    //     "status": "Iniciante"
-    //   }
 
     const createPost = async (formData) => {
         try {
@@ -57,7 +35,7 @@ export const TechProvider = ({ children }) => {
     }
 
     return (
-        <TechContext.Provider value={{createPost}}>
+        <TechContext.Provider value={{ createPost, editingPost, setEditingPost }}>
             {children}
         </TechContext.Provider>
     )
