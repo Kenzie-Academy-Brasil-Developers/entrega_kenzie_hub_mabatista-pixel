@@ -18,7 +18,6 @@ export const TechCard = ({ post }) => {
         openModal();
     }
 
-
     return (
         <li className={styles.cardContainer}>
             <div className={styles.divContainer}>

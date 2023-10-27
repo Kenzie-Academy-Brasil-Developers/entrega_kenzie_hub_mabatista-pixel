@@ -3,16 +3,16 @@ import styles from "./style.module.scss";
 import { useForm } from "react-hook-form";
 import { TechContext } from "../providers/TechContext";
 
-export const EditTechModal = ({ isOpen, onClose}) => {
+export const EditTechModal = ({ isOpen, onClose }) => {
 
     if (!isOpen) return null;
 
-    const {editingPost, setEditingPost} = useContext(TechContext);
+    const { techUpdate, editingPost, setEditingPost } = useContext(TechContext);
 
     const { register, handleSubmit } = useForm({
         values: {
-            title: editingPost.title,
-            status: editingPost.status,
+            title: editingPost?.title,
+            status: editingPost?.status,
         },
     });
 
@@ -21,9 +21,11 @@ export const EditTechModal = ({ isOpen, onClose}) => {
         onClose();
     }
 
-    console.log(editingPost);
+    const submit = (formData) => {
+        techUpdate(formData)
+        onClose();
+    }
 
-  
 
     return (
         <div className={styles.modalContainer}>
@@ -33,7 +35,7 @@ export const EditTechModal = ({ isOpen, onClose}) => {
                     <button className={styles.modalClose} onClick={handleClick}>X</button>
                 </header>
                 <div className={styles.formContainer}>
-                    <form>
+                    <form onSubmit={handleSubmit(submit)}>
                         <div className={styles.inputsContainer}>
                             <div className={styles.inputDiv}>
                                 <label htmlFor="title">Nome do projeto</label>

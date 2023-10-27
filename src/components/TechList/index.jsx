@@ -13,10 +13,7 @@ export const TechList = () => {
     const openModal = () => setModalOpen(true);
     const closeModal = () => setModalOpen(false);
 
-    const { techList } = useContext(HubContext)
-    // console.log(techList)
-    console.log(techList)
-
+    const { techList } = useContext(HubContext);
 
     return (
         <>

@@ -12,7 +12,6 @@ export const TechProvider = ({ children }) => {
     const { techList, setTechList } = useContext(HubContext)
     const [editingPost, setEditingPost] = useState(null);
 
-
     const createPost = async (formData) => {
         try {
             const token = localStorage.getItem("@TOKEN");
@@ -34,8 +33,34 @@ export const TechProvider = ({ children }) => {
         }
     }
 
+    const techUpdate = async (formData) => {
+        try {
+            const token = localStorage.getItem("@TOKEN");
+
+            const { data } = await api.put(`/users/techs/${editingPost.id}`, formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            const newTechList = techList.map((post) => {
+                if (post.id === editingPost.id) {
+                    return data;
+                } else {
+                    return post;
+                }
+            });
+
+            setTechList(newTechList);
+            setEditingPost(null);
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
-        <TechContext.Provider value={{ createPost, editingPost, setEditingPost }}>
+        <TechContext.Provider value={{ createPost, editingPost, setEditingPost, techUpdate }}>
             {children}
         </TechContext.Provider>
     )
