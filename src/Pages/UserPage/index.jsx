@@ -4,6 +4,7 @@ import styles from "./style.module.scss";
 import { HubContext } from "../../components/providers/HubContext";
 import { useContext } from "react";
 import { TechList } from "../../components/TechList";
+import { HorizontalLine } from "../../components/HorizontalLine";
 
 export const UserPage = () => {
 
@@ -17,16 +18,13 @@ export const UserPage = () => {
                         <img src={logo} alt="Logo Kenzie Hub" />
                         <Link to="/" onClick={() => userLogout()} > Sair</Link>
                     </div>
-                    <hr className={styles.customLine} />
-
+                    <HorizontalLine />
                     <div className={styles.headerDivInfo}>
                         <h1 className="title1">Olá, {user?.name}</h1>
                         <span>{user?.course_module}</span>
                     </div>
                 </header >
-
-                <hr className={styles.customLine} />
-
+                    <HorizontalLine />
                 <main className={styles.userMain}>
                     <div className={styles.boxContainer}>
                         <div className={styles.notificationDiv}>

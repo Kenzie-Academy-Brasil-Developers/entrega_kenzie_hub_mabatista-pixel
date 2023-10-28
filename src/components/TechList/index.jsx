@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import addButton from "../../assets/addButton.svg";
-import { TechContext } from "../providers/TechContext";
 import { TechCard } from "../TechCard";
 import { HubContext } from "../providers/HubContext";
 import { CreateTechModal } from "../CreateTechModal";

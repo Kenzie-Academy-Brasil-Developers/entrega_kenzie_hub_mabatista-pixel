@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 export const HomePage = () => {
 
-    const { user, setUser } = useContext(HubContext)
+    const { setUser } = useContext(HubContext)
 
     return (
         <>

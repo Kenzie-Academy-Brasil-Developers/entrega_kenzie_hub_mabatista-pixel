@@ -1,13 +1,12 @@
 import { useContext, useState } from "react";
 import { MdEdit, MdDelete } from "react-icons/md";
-import { HubContext } from "../providers/HubContext";
 import styles from "./style.module.scss";
 import { EditTechModal } from "../EditTechModal";
 import { TechContext } from "../providers/TechContext";
 
 export const TechCard = ({ post }) => {
 
-    const { setEditingPost } = useContext(TechContext);
+    const { setEditingPost, techDelete } = useContext(TechContext);
     const [isModalOpen, setModalOpen] = useState(false);
 
     const openModal = () => setModalOpen(true);
@@ -26,10 +25,10 @@ export const TechCard = ({ post }) => {
                     <span>{post?.status}</span>
                 </div>
                 <div className={styles.cardIcons}>
-                    <button onClick={handleClick} title="Edit" aria-label="edit">
+                    <button className={styles.iconBtn} onClick={handleClick} title="Edit" aria-label="edit">
                         <MdEdit />
                     </button>
-                    <button title="Delete" aria-label="delete">
+                    <button onClick={() => techDelete(post.id)} className={styles.iconBtn} title="Delete" aria-label="delete">
                         <MdDelete />
                     </button>
                     <EditTechModal isOpen={isModalOpen} onClose={closeModal}/>

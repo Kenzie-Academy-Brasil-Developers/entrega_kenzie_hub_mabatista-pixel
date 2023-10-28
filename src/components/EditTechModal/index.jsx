@@ -26,7 +26,6 @@ export const EditTechModal = ({ isOpen, onClose }) => {
         onClose();
     }
 
-
     return (
         <div className={styles.modalContainer}>
             <div className={styles.modalContent}>

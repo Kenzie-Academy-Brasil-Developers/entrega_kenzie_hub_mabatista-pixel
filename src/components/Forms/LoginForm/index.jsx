@@ -4,7 +4,6 @@ import styles from "./styles.module.scss";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { loginFormSchema } from "./loginForm.schema";
-import { api } from "../../../services/api";
 import { useState, useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,14 +15,11 @@ export const LoginForm = () => {
         resolver: zodResolver(loginFormSchema),
     });
 
-    const { setUser } = useContext(HubContext)
-
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
     const { userLogin } = useContext(HubContext);
-
 
     const submit = (formData) => {
         userLogin(formData, setLoading)

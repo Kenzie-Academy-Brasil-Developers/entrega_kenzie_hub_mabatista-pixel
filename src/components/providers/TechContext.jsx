@@ -1,8 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { HubContext } from "./HubContext";
 import { api } from "../../services/api";
-import { useEffect } from "react";
-
+import { toast } from "react-toastify";
 
 export const TechContext = createContext({});
 
@@ -59,8 +58,29 @@ export const TechProvider = ({ children }) => {
         }
     }
 
+    const techDelete = async (deletingId) => {
+        try {
+            const token = localStorage.getItem("@TOKEN");
+
+            await api.delete(`/users/techs/${deletingId}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            const newPostList = techList.filter((post) => post.id !== deletingId);
+            setTechList(newPostList);
+
+            toast("Exclusão realizada com sucesso!")
+
+        } catch (error) {
+            console.log(error)
+            toast("Ops! Algo deu errado...")
+        }
+    }
+
     return (
-        <TechContext.Provider value={{ createPost, editingPost, setEditingPost, techUpdate }}>
+        <TechContext.Provider value={{ createPost, editingPost, setEditingPost, techUpdate, techDelete }}>
             {children}
         </TechContext.Provider>
     )

@@ -49,7 +49,6 @@ export const HubProvider = ({ children }) => {
 
     const navigate = useNavigate();
 
-
     const userRegister = async (formData, setLoading) => {
         try {
             setLoading(true);
@@ -89,14 +88,12 @@ export const HubProvider = ({ children }) => {
         }
     }
 
-
     const userLogout = () => {
         setUser(null)
         localStorage.removeItem("@USERID")
         localStorage.removeItem("@TOKEN")
         navigate("/")
     }
-
 
     return (
         <HubContext.Provider value={{ loading, user, setUser, userRegister, userLogin, userLogout, techList, setTechList }}>

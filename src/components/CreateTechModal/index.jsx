@@ -13,10 +13,8 @@ export const CreateTechModal = ({ isOpen, onClose }) => {
 
     const submit = (formData) => {
         createPost(formData)
+        onClose()
     }
-
-
-
 
     return (
         <div className={styles.modalContainer}>
@@ -46,6 +44,5 @@ export const CreateTechModal = ({ isOpen, onClose }) => {
                 </div>
             </div>
         </div>
-
     )
 }
