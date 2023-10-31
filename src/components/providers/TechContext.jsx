@@ -7,17 +7,14 @@ export const TechContext = createContext({});
 
 export const TechProvider = ({ children }) => {
 
-    const { user } = useContext(HubContext)
-    const { techList, setTechList } = useContext(HubContext)
+    const { techList, setTechList } = useContext(HubContext);
     const [editingPost, setEditingPost] = useState(null);
 
     const createPost = async (formData) => {
         try {
             const token = localStorage.getItem("@TOKEN");
 
-
             const newPost = { ...formData };
-
 
             const { data } = await api.post("/users/techs", newPost, {
                 headers: {
@@ -26,7 +23,7 @@ export const TechProvider = ({ children }) => {
             });
 
             setTechList([...techList, data])
-
+            toast ("Tecnologia cadastrada com sucesso!")
         } catch (error) {
             console.log(error)
         }

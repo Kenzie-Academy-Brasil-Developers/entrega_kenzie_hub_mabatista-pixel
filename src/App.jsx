@@ -3,6 +3,7 @@ import Routes from "./routes";
 import { useContext } from "react";
 import { HubContext } from "./components/providers/HubContext";
 import { Loading } from "./components/Loading";
+import { ToastContainer } from "react-toastify";
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
     {loading ? <Loading/> : <Routes /> }
+    <ToastContainer autoClose={2000}/>
     </>
   )
 }

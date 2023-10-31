@@ -9,6 +9,10 @@
     justify-content: center;
     align-items: center;
 
+    button {
+        cursor: pointer;
+    }
+
     div {
         display: flex;
         flex-direction: column;

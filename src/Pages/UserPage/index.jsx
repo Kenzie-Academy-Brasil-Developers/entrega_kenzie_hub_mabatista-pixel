@@ -24,7 +24,7 @@ export const UserPage = () => {
                         <span>{user?.course_module}</span>
                     </div>
                 </header >
-                    <HorizontalLine />
+                <HorizontalLine />
                 <main className={styles.userMain}>
                     <div className={styles.boxContainer}>
                         <div className={styles.notificationDiv}>
@@ -33,6 +33,7 @@ export const UserPage = () => {
                     </div>
                 </main>
             </div >
+
         </>
     )
 }
