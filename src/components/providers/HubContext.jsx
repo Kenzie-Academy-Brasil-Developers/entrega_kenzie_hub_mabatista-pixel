@@ -17,13 +17,10 @@ export const HubProvider = ({ children }) => {
     const pathname = window.location.pathname;
 
     useEffect(() => {
-        const token = localStorage.getItem("@TOKEN")
-        const userId = localStorage.getItem("@USERID")
+        const token = localStorage.getItem("@TOKEN");
+        const userId = localStorage.getItem("@USERID");
 
         const getUser = async () => {
-
-            if (token && userId) {
-
                 try {
                     setLoading(true);
                     const { data } = await api.get("/profile", {
@@ -42,7 +39,6 @@ export const HubProvider = ({ children }) => {
                 } finally {
                     setLoading(false)
                 }
-            }
         };
         getUser();
     }, []);
