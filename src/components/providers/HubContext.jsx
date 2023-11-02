@@ -18,7 +18,6 @@ export const HubProvider = ({ children }) => {
 
     useEffect(() => {
         const token = localStorage.getItem("@TOKEN");
-        const userId = localStorage.getItem("@USERID");
 
         const getUser = async () => {
                 try {
