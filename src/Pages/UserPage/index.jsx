@@ -6,9 +6,10 @@ import { useContext } from "react";
 import { TechList } from "../../components/TechList";
 import { HorizontalLine } from "../../components/HorizontalLine";
 
+
 export const UserPage = () => {
 
-    const { user, userLogout } = useContext(HubContext);
+    const { user, userLogout} = useContext(HubContext);
 
     return (
         <>

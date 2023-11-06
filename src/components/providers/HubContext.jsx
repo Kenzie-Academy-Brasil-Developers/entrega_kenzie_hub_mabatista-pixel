@@ -11,7 +11,6 @@ export const HubContext = createContext({});
 export const HubProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(false);
-    const [techList, setTechList] = useState([]);
     const [user, setUser] = useState(null);
 
     const pathname = window.location.pathname;
@@ -28,7 +27,6 @@ export const HubProvider = ({ children }) => {
                         }
                     });
                     setUser(data)
-                    setTechList(data.techs)
                     navigate(pathname)
 
                 } catch (error) {
@@ -91,7 +89,7 @@ export const HubProvider = ({ children }) => {
     }
 
     return (
-        <HubContext.Provider value={{ loading, user, setUser, userRegister, userLogin, userLogout, techList, setTechList }}>
+        <HubContext.Provider value={{ loading, user, setUser, userRegister, userLogin, userLogout}}>
             {children}
         </HubContext.Provider>
     )

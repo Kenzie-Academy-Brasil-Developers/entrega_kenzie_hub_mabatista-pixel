@@ -4,6 +4,7 @@ import { TechCard } from "../TechCard";
 import { HubContext } from "../providers/HubContext";
 import { CreateTechModal } from "../CreateTechModal";
 import styles from "./style.module.scss";
+import { TechContext } from "../providers/TechContext";
 
 export const TechList = () => {
 
@@ -12,7 +13,8 @@ export const TechList = () => {
     const openModal = () => setModalOpen(true);
     const closeModal = () => setModalOpen(false);
 
-    const { techList } = useContext(HubContext);
+    const { techList } = useContext(TechContext);
+
 
     return (
         <>

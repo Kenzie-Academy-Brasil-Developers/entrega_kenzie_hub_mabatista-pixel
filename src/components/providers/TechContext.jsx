@@ -1,14 +1,36 @@
-import { createContext, useContext, useState } from "react";
-import { HubContext } from "./HubContext";
+import { createContext, useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
+import { useCallback } from "react";
 
 export const TechContext = createContext({});
 
 export const TechProvider = ({ children }) => {
 
-    const { techList, setTechList } = useContext(HubContext);
+    const token = localStorage.getItem("@TOKEN");
+
+
+    const [ techList, setTechList ] = useState([]);
     const [editingPost, setEditingPost] = useState(null);
+
+    const getTechs = useCallback(async () => {
+
+        try {
+            const {data} = await api.get("/profile", {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            setTechList(data.techs)
+
+        } catch (error) {
+            toast.error(error)
+        }
+    }, [setTechList])
+
+    useEffect(() => {
+        getTechs();
+    }, [getTechs]);
 
     const createPost = async (formData) => {
         try {
@@ -77,7 +99,7 @@ export const TechProvider = ({ children }) => {
     }
 
     return (
-        <TechContext.Provider value={{ createPost, editingPost, setEditingPost, techUpdate, techDelete }}>
+        <TechContext.Provider value={{ createPost, editingPost, setEditingPost, techUpdate, techDelete, setTechList, techList, getTechs }}>
             {children}
         </TechContext.Provider>
     )
